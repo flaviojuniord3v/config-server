@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        #git.uri=https://github.com/flaviojuniord3v/config-repo
+        native:
+          searchLocations: file://Users/flaviojuniordev/Documents/developer/eclipse-workspace-poc/config-repo
